@@ -1,0 +1,34 @@
+﻿@model MvcKutupphane.Models.Entity.TblYazar
+@{
+    ViewBag.Title = "YazarEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+
+        <label>Yazar Adı</label>
+        @Html.TextBoxFor(y => y.Ad, new { @class = "form-control" })
+        @Html.ValidationMessageFor(y => y.Ad)
+    </div>
+
+    <div style="margin-top:15px">
+        <label>Yazar Soyadı</label>
+        @Html.TextBoxFor(y => y.Soyad, new { @class = "form-control" })
+        @Html.ValidationMessageFor(y=>y.Soyad)
+    </div>
+
+    <div style="margin-top:15px">
+        <label>Yazar Detayı</label>
+        @Html.TextAreaFor(y => y.Detay, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Yazar Ekle</button>
+    </div>
+
+
+
+</form>

@@ -1,0 +1,38 @@
+﻿@using MvcKutupphane.Models.Entity
+
+
+@model List<TblUyeler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Üyeler</h2>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>UYE ID</th>
+        <th>UYE ADI</th>
+        <th>UYE SOYADI</th>
+        <th>OKUL</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+        <th>Üye Kitap Geçmişi</th>
+    </tr>
+    @foreach (var uye in Model)
+    {
+    <tr>
+        <td>@uye.Id</td>
+        <td>@uye.Ad</td>
+        <td>@uye.Soyad</td>
+        <td>@uye.Okul</td>
+
+        <td><a href="/Uye/UyeSil/@uye.Id" class="btn btn-danger">Sil</a></td>
+        <td><a href="/Uye/UyeGetir/@uye.Id" class="btn btn-success">Güncelle</a></td>
+        <td><a href="/Uye/UyeKitapGecmis/@uye.Id" class="btn btn-success" style="background-color:lightseagreen">Kitap Geçmişi</a></td>
+    </tr>
+    }
+</table>
+<a href="/Uye/UyeEkle/" class="btn btn-primary">Yeni Üye Ekle</a>
+
